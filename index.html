@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>♥♥♥♥♥♥</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    
+</head>
+<body >
+    
+    
+    
+    <div  class="marco" >
+        
+            <span id="t">I LOVE YOU</span>
+            <div id="boton1" class="heart"></div>
+            <i id="s" class="fas fa-play-circle"></i>
+            <i id="a"class="fas fa-pause-circle"></i>
+        <audio id="musica" src="Gustavo Cerati - Tu Locura (Official Visualizer).mp3"></audio>
+
+    </div>
+
+
+    
+    <script>
+        const button1= document.getElementById('boton1')
+        const sound =document.getElementById('musica')
+        const h1=document.getElementById('t')
+        const play=document.getElementById('s')
+        const pause=document.getElementById('a')
+
+
+        let a=true;
+        let v=true;
+        let c=true;
+
+
+        function estilos()
+        {
+            if(c==true)
+            {
+                play.style.transition="1s";
+                play.style.opacity="0";
+
+                
+                pause.style.transition="1s";
+                pause.style.opacity="1";
+
+                c=false;
+
+            }
+            else {
+
+                play.style.transition="1s";
+                play.style.opacity="1";
+
+                pause.style.transition="1s";
+                pause.style.opacity="0";
+
+                c=true;
+
+            }
+        }
+
+
+        function activar()
+        {
+            
+            if(a==true)
+            {
+                h1.classList.add('active');
+  
+                a=false;
+
+            }
+            else {
+                h1.classList.remove('active');
+                a=true;
+
+            }
+            
+        }
+        
+        function sonido(){
+            if(v==true)
+            {
+                sound.play();
+                v=false;
+
+            }
+            else {
+                sound.pause();
+                v=true;
+
+            }
+        }
+
+
+
+        button1.addEventListener('click',() =>{
+            sound.volume =0.3;
+            activar();
+            sound.ariaCurrent=10;
+            sonido();
+            estilos();
+    
+            
+        })
+
+    </script>
+    
+</body>
+</html>
